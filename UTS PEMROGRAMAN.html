@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSS.css">
+    <title>Website Saya</title>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+            const sections = document.querySelectorAll('main section');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    sections.forEach(section => section.classList.remove('active'));
+                    document.querySelector(link.getAttribute('href')).classList.add('active');
+                });
+            });
+
+            
+            sections[0].classList.add('active');
+        });
+
+        function submitForm(event) {
+            event.preventDefault();
+            const table = document.querySelector('#data table tbody');
+            const name = document.querySelector('#name').value;
+            const email = document.querySelector('#email').value;
+            const phone = document.querySelector('#phone').value;
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><img src="images/Logo.jpg" alt="User"></td>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
+            `;
+            table.appendChild(newRow);
+
+            document.querySelector('#daftar form').reset();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Universitas Mujahidin <br>(UDIN)</br></h1>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#daftar">Daftar</a></li>
+                <li><a href="#data">Data Pendaftar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="beranda" class="content active">
+            <center> <h2>Beranda</h2>
+            <div class="Beranda">
+    <img src="logo.png" alt="Logo" class="logo">
+
+            
+                <article>
+
+                     
+                <h3>Tips dan Trik meningkatkan produktivitas untuk kuliah dan tugasmu</h3>
+    <p>Dibawah ini adalah beberapa tips dan trik untuk meningkatkan dirimu:</p>
+    <ul>
+      <li>Buatlah daftar tujuan dan prioritasmu dalam kuliah</li>
+      <li>Gunakan waktu dengan efektif untuk belajar</li>
+      <li>Buatlah jadwal kuliah yang kamu ambil</li>
+      <li>Hiraukan gangguan dan fokus pada tugas</li>
+      <li>Beristirahat</li>
+    </ul>
+  </article>
+
+
+ 
+
+        </center>
+        </section>
+
+        <section id="profil" class="profile">
+            <h1 align="center"> Biodata Diri</h1>
+    <hr width="600px">
+    <table align="center" cellpadding="10px" width="600px">
+        <tr>
+            <td>Nama</td>
+        <td>: Riski This Syukurin</td>
+            <td rowspan="8"> <img src="Mjn.jpg" height="200px" width="170px"></td>
+        </tr>
+
+    <tr>
+        <td>NPM</td>
+            <td>: 2947289847</td>
+    </tr>
+    <tr>
+
+     <td>Semester</td>
+     <td>: 6</td>
+    </tr>
+
+     <tr>
+        <td>Jurusan</td>
+        <td>: Pendidikan Informatika</td>
+    </tr>
+
+
+    <tr>
+        <td>Tempat/Tgl lahir</td>
+        <td>: Tembeng Putik, 17 Agustus 1945</td>
+    </tr>
+
+    <tr>
+        <td>Agama</td>
+        <td>: Islam</td>
+    </tr>
+
+    <tr>
+        <td>Alamat</td>
+        <td>: Palsu</td>
+    </tr>
+    </table>
+        </section>
+
+        <section id="daftar" class="form">
+            <center> <h2>Formulir Pendaftaran</h2>
+            <form onsubmit="submitForm(event)">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">No. Telepon:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <input type="submit" value="Daftar"></center>
+        </section>
+
+        <section id="data" class="table">
+            <h2><center>Data Para Pendaftar</center></h2>
+            <p><center> Berikut ini adalah daftar calon mahasiswa Universitas Mujahidin (UDIN)<br>
+    Semester Genap TA 2052/2056</center></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>No.Telepon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <center><img src="Lutfi.jpg" width="60px" alt="User 1"></center></td>
+                        <td>Tri Empat</td>
+                        <td>Lutfi@ajbdaj.com</td>
+                        <td>2983892478</td>
+                    </tr>
+                    <tr>
+                        <td><center><img src="Messi.jpg"width="60px" alt="User 2"></center></td>
+                        <td>Smosimos</td>
+                        <td>Messi@javdja.com</td>
+                        <td>923784684</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Narto.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Andrinos</td>
+                        <td>Narto@jdfjhacom</td>
+                        <td>2486986486</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Sakura.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Marilyn</td>
+                        <td>Sakura@hdava.com</td>
+                        <td>049037492</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Obito.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Kevin Tremlin</td>
+                        <td>Obito@shghb.com</td>
+                        <td>3565524746</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Ronaldo.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Thomas Mulyadi</td>
+                        <td>rolando@hdahv.com</td>
+                        <td>5376548724</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Fans.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Mulki Nasriyadi</td>
+                        <td>uFans@adjgaj.com</td>
+                        <td>9264284628</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Naruto.png" width="60px" alt="User 2"></center></td>
+                        <td>Siti Malinkovic</td>
+                        <td>Naruto@fshgsh.com</td>
+                        <td>9479846385</td>
+                    </tr>
+
+                    <tr>
+                        <td><center><img src="Hinata.jpg" width="60px" alt="User 2"></center></td>
+                        <td>Imah Presilia</td>
+                        <td>Muessi@shjfsh.com</td>
+                        <td>029840978</td>
+                    </tr>
+
+                     <tr>
+                        <td><center><img src="Guardiola.jpg" width="60px" alt=""></center></td>
+                        <td>Ridwan Porti Dilistiawan</td>
+                        <td>Guardiola@dghhsd.com</td>
+                        <td>23764872748</td>
+                    </tr>
+
+                     <tr>
+                        <td><center><img src="Hinata.jpg" width="60px" alt="User 2"></center></td>
+                    <td>Leli Lalana</td>
+                        <td>Hinata@hsdfahb.com</td>
+                        <td>928642846</td>
+                    </tr>
+            
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;  Website Siuu</p>
+    </footer>
+</body>
+</html>
